@@ -96,6 +96,9 @@ p {
 
 .user-input input:invalid:focus {
   border: 2px solid red;
+  background-image: url("images/icon-error.svg");
+  background-repeat: no-repeat;
+  background-position: 90% center;
 }
 
 .user-input input:invalid:focus + button::after {
@@ -171,7 +174,7 @@ button img {
   }
 
   #hero {
-    flex-basis: 100%;
+    flex-basis: 0 0 100%;
     order: 2;
     width: 45%;
   }
