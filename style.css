@@ -1,0 +1,188 @@
+
+:root {
+  --text1: hsl(0, 36%, 70%); /* Desaturated Red */
+  --text2: hsl(0, 93%, 68%); /* Soft Red */
+  --inactive: hsl(0, 35%, 85%); /* Dark Grayish Red */
+  --active: hsl(358, 75%, 89%);
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  padding: 3em 4em;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 1.4em;
+  padding-right: 1.4em;
+}
+
+#logo {
+  width: clamp(150px, 8%, 360px);
+}
+
+picture img {
+  object-fit: cover;
+}
+
+main {
+  text-align: center;
+  flex-grow: 8;
+  max-width: 780px;
+  padding-left: 1.4em;
+  padding-right: 1.4em;
+}
+
+#hero {
+  flex-grow: 3;
+}
+
+#hero > * {
+  width: 100%;
+  height: 100%;
+}
+
+.brown-light {
+  font-weight: 300;
+  color: var(--text1);
+}
+
+h1 {
+  font-size: clamp(2.25rem, 3.7vw + 1.5vw, 5.25rem);
+  letter-spacing: 0.2em;
+  font-weight: normal;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+p {
+  font-size: clamp(0.875rem, 0.72vw + 0.75rem, 1.5rem);
+  line-height: 1.6;
+  color: var(--text1);
+  margin-bottom: 3em;
+}
+
+.user-input {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  border-radius: 36px;
+  border: 1px solid var(--inactive);
+}
+
+.user-input input, .user-input button {
+  padding: 1.3em 1.8em;
+  border-style: none;
+}
+
+.user-input input::placeholder {
+  color: var(--inactive);
+}
+
+.user-input input:focus {
+  outline: none;
+}
+
+.user-input input:invalid:focus {
+  border: 2px solid red;
+}
+
+.user-input input:invalid:focus + button::after {
+  content: "Please provide a valid email";
+  position: absolute;
+  bottom: -50%;
+  left: -530%;
+  color: var(--text1);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+
+.user-input input {
+  position: absolute;
+  border-radius: 36px 0 0 36px;
+  left: 0;
+  height: 100%;
+  width: 90%;
+}
+
+.user-input button {
+  border-radius: 36px;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  padding: 0.8em 1.3em;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 15%;
+  min-width: 70px;
+  z-index: 50;
+  box-shadow: 0 8px 10px hsl(0, 74%, 74%);
+}
+
+.user-input button:hover, .user-input button:active {
+  background: var(--active);
+  box-shadow: 0 12px 16px 2px hsl(358, 75%, 70%);
+}
+
+
+button {
+  cursor: pointer;
+}
+
+button img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  header {
+    padding-left: 10%;
+    /* padding-right: max(80px, 12%); */
+    width: 55%;
+  }
+
+  main {
+    padding-left: 10%;
+    /* padding-right: max(80px, 12%); */
+    width: 55%;
+    text-align: left;
+    background-image: url("images/bg-pattern-desktop.svg");
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #hero {
+    flex-basis: 100%;
+    order: 2;
+    width: 45%;
+  }
+}
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+  
